@@ -3,6 +3,10 @@ import * as fs from "fs";
 /**
  * --- Day 1: Secret Entrance ---
  * https://adventofcode.com/2025/day/1
+ */
+
+/**
+ * --- Part 1 ---
  * Since the scenario outlines an initial state and a series of simple movement
  * instructions, this seemed like a good candidate for a reduce approach.
  */
@@ -53,7 +57,7 @@ fs.readFile("./day-01-input.txt", "utf8", (error, data) => {
 // Result for my input: 1071
 
 /**
- * --- Part Two ---
+ * --- Part 2 ---
  * We now also have to count the number of times we end up on 0 OR turn past it
  * (including multiple turns in a single instruction). This was was pretty tedious
  * to troubleshoot and it was challenging pinpoint certain edge cases. If in doubt

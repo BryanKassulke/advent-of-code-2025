@@ -6,7 +6,7 @@ import * as fs from "fs";
  */
 
 /**
- * --- Part One ---
+ * --- Part 1 ---
  * Certainly a lot harder already! The problem outlines that an invalid id is made
  * ONLY of a digit sequence repeated twice. We generate invalid IDs by taking the
  * first half of the min, repeating it twice, and incrementing until we exceed the max.
@@ -63,7 +63,7 @@ fs.readFile("./day-02-input.txt", "utf8", (error, data) => {
 // Part one answer for my input: 18951763203
 
 /**
- * --- Part Two ---
+ * --- Part 2 ---
  * The problem is expanded to include ids as invalid that are a sequence occuring AT LEAST twice.
  * We to adjust the way we generate invalid IDs to account for this. We just need to generalise our
  * algorithm to allow for any number of sequences greater than or equal to two. We can also skip
