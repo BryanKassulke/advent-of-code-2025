@@ -13,18 +13,18 @@
 local joltage, rowLength, digits = 0, 100, 12
 for line in io.lines("./day-03-input.txt") do
   local best = {}
-	for i = 1,rowLength do
-    local digit = tonumber(line:sub(i,i))
+  for i = 1, rowLength do
+    local digit = tonumber(line:sub(i, i))
     local betterFound = false
-    for j = 1,digits do
+    for j = 1, digits do
       -- We clear out if we can no longer use these numbers
-      if (betterFound) then 
+      if (betterFound) then
         best[j] = nil
-      -- We fill if we don't have enough digits
+        -- We fill if we don't have enough digits
       elseif (best[j] == nil) then
         best[j] = digit
         break
-      -- A new best?
+        -- A new best?
       elseif (digit > best[j]) then
         -- We can only find better when there's enough digits left
         if (i <= (rowLength - digits) + j) then
@@ -33,9 +33,9 @@ for line in io.lines("./day-03-input.txt") do
         end
       end
     end
-	end
+  end
   local value = ""
-  for k,v in pairs(best) do
+  for k, v in pairs(best) do
     if (#value > digits) then break end
     value = value .. tostring(v)
   end
@@ -43,7 +43,11 @@ for line in io.lines("./day-03-input.txt") do
 end
 print(joltage)
 
+-- Result: 17343
+
 --[[
   --- Part 2 ---
   Hahahaha, now we need 12 digits. Easy-peasy since that was a parameter all along.
 ]]
+
+-- Result: 172664333119298
